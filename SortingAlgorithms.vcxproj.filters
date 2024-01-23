@@ -28,4 +28,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Counting.c">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>
