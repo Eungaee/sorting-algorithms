@@ -11,17 +11,12 @@ void Merge(int *a, int left, int center, int right) {
         else
             b[k++] = a[i++];
     }
-    // 왼쪽 요소나 오른쪽 요소가 하나 더 많아서 처리 안됐을 때 b 뒤에 추가
-    if (i <= center) b[k] = a[i];
-    if (j <= right) b[k] = a[j];
-    do {  // copy b to a.
+    while (i <= center)  // 왼쪽이나 오른쪽 배열중 한쪽에 작은 수가 몰려있어서
+        b[k++] = a[i++];  // 한쪽에서만 계속 들어갔을 때
+    while (j <= right)  // 들어가지 않은 나머지 배열의 요소들을
+        b[k++] = a[j++];  // b 뒤에 전부 채우기
+    while (k--)           // copy b to a.
         a[left + k] = b[k];
-    } while (k--);  // k--를 나중에 실행해야 의도한대로 작동해서 do while 사용.
-    // AlsoOK
-    /* while (k >= 0) {
-        a[left + k] = b[k];
-        k--
-    } */
 }
 
 void MergeSort(int *a, int left, int right) {
