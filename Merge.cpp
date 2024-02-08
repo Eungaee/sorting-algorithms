@@ -35,7 +35,7 @@ void MergeSort(int *a, int left, int right) {
 }
 
 int main() {
-    int a[1000], n, left, right;
+    int a[1000], n;
     cin >> n;
     for (int i = 0; i < n; i++) cin >> a[i];
     MergeSort(a, 0, n - 1);
